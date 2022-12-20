@@ -17,7 +17,7 @@ void Computer::play(Board &board) {
 
   std::vector<int> columns_to_play;
   if (depth <= 0) {
-    columns_to_play = board.playable_places();
+    columns_to_play = board.playable_columns();
   } else {
     BoardState state(board, depth, symbol);
     columns_to_play = state.get_best_moves(symbol);
