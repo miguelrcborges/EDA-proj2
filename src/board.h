@@ -5,7 +5,7 @@
 
 class Board {
 public:
-  Board();
+  Board(int width, int height);
   void draw_board();
   bool check_win();
   bool is_playable(int column);

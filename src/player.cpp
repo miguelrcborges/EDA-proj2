@@ -8,7 +8,7 @@ std::string Player::get_name() {
 }
 
 Player::Player(char symbol_to_set) {
-  name = input.get_string("What's your name?");
+  name = input.get_string("What's the player name?");
   last_move[0] = 0;
   last_move[1] = 0;
   symbol = symbol_to_set;
