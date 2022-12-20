@@ -1,9 +1,12 @@
 
 #include <iostream>
 #include <string>
+#include <array>
+#include <ctime>
+
 #include "board.h"
 #include "player.h"
-#include <array>
+
 
 
 //template do Miguel
@@ -15,14 +18,14 @@
 */
 class Game {
 public:
-	Game(Player player1, Player player2); //initialization of the game class
+	Game(Player* pointer_player1, Player* pointer_player2); //initialization of the game class
 	~Game(); //end of match; logs the results
-	start(); //creates a new match
 private:
 	InputHandler input;
 	tm* times;
-	std::array<Player,2> players;
+	std::array<Player* ,2> players;
 	int turn;
 	Board board;
+	std::array<bool, 2> is_computer;
 };
 
