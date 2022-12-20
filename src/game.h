@@ -3,6 +3,7 @@
 #include <string>
 #include "board.h"
 #include "player.h"
+#include <array>
 
 
 //template do Miguel
@@ -14,12 +15,12 @@
 */
 class Game {
 public:
-	Game(Board board,Player players); //initialization of the game class
+	Game(Player player1, Player player2); //initialization of the game class
 	~Game(); //end of match; logs the results
-	start(); //creates
+	start(); //creates a new match
 private:
 	tm* times;
-	players;
+	std::array<Player,2> players;
 	int turn;
 	Board board;
 };
