@@ -9,8 +9,8 @@
 
 Game::Game(Player player1, Player player2)
 {
-	int height = inputHandler.get_input<int>("What's the board height?");
-	int width = inputHandler.get_input<int>("What's the board width?");
+	int height = input.get_input<int>("What's the board height?");
+	int width = input.get_input<int>("What's the board width?");
 	this->board = Board board(width,height);
 	std::array<Player, 2> players = { player1, player2 };
 	this->players = players;
