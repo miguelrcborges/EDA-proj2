@@ -7,18 +7,16 @@
 #include <utility>
 
 
-Board::Board(int width, int height, int to_connect) {
+Board::Board(int width, int height, int to_connect, char player_one_symbol, char player_two_symbol) : symbols{player_one_symbol, player_two_symbol}, to_connect{to_connect} {
 	//vector of with appropriate length, that will be apended multiple times to slots to form the board
 	std::vector<char> line_vector(height, EMPTY_CHAR);
 	//adds a new column to the board
 	for (int x = 0; x < width; x++) {
 		slots.push_back(line_vector);
 	}
-
-	this->to_connect = to_connect;
 }
 
-Board::Board(Board &game_board) {
+Board::Board(Board &game_board) : symbols(game_board.symbols), to_connect(game_board.to_connect) {
 	slots = game_board.slots;
 }
 
@@ -29,9 +27,9 @@ void Board::draw_board() const {
 	//draws positions, X in red and O in green, properly formated
 	for (int y = get_height() - 1; y >= 0; y--) {
 		for (int x = 0; x < get_width(); x++) {
-			if (slots[x][y] == PLAYER_ONE_SYMBOL)
+			if (slots[x][y] == symbols[0])
 				std::cout << PRINT_RED; //sets characters color to red
-			else if (slots[x][y] == PLAYER_TWO_SYMBOL)
+			else if (slots[x][y] == symbols[1])
 				std::cout << PRINT_GREEN; //sets characters color to green
 			std::cout << std::setw(5) << slots[x][y]; //prints the symbol slots[x][y], formatted by std::setw
 		}
@@ -130,4 +128,8 @@ void Board::print_header() const {
 	for (char i = 'A'; i < 'A' + get_width(); i++)
 		std::cout << std::setw(5) << i;
 	std::cout << std::endl << CLEAR_STYLE;
+}
+
+char Board::get_symbol(int player) const {
+	return symbols[player];
 }

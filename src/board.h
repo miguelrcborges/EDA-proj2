@@ -15,12 +15,9 @@
 /** ANSI escape code to clear applied styles. */
 #define CLEAR_STYLE  "\033[m"
 
-#define PLAYER_ONE_SYMBOL 'X'
-#define PLAYER_TWO_SYMBOL 'O'
-
 class Board {
 public:
-  Board(int width, int height, int to_connect);
+  Board(int width, int height, int to_connect, char player_one_symbol, char player_two_symbol);
   Board(Board &game_board);
   void draw_board() const;
   bool check_win(std::array<int, 2> last_move) const;
@@ -28,10 +25,12 @@ public:
   std::vector<int> playable_columns() const;
   int get_width() const;
   int get_height() const;
+  char get_symbol(int player) const;
   int play(int column, char symbol);
 
 private:
   std::vector<std::vector<char>> slots;
   void print_header() const;
-  int to_connect;
+  const int to_connect;
+  const std::array<char, 2> symbols;
 };
