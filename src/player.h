@@ -1,15 +1,19 @@
 #pragma once
 
 #include <string>
+#include <array>
 #include "board.h"
+#include "inputHandler.h"
 
 class Player {
 public:
+  Player(char symbol_to_set);
   std::string get_name();
-  void play();
+  virtual void play(Board &board);
 
-private:
+protected:
+  InputHandler input;
   std::string name;
-  int last_move[2];
+  std::array<int, 2> last_move;
   char symbol;
 };

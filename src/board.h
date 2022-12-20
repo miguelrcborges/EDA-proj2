@@ -9,6 +9,8 @@ public:
   void draw_board();
   bool check_win();
   bool is_playable(int column);
+  int get_width();
+  int get_height();
   void play(int column, char symbol);
 
 private:
