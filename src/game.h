@@ -1,3 +1,4 @@
+#define NUMBER_OF_PLAYERS 2
 
 #include <iostream>
 #include <string>
@@ -18,7 +19,7 @@
 */
 class Game {
 public:
-	Game(Player* pointer_player1, Player* pointer_player2); //initialization of the game class
+	Game(); //initialization of the game class
 	~Game(); //end of match; logs the results
 private:
 	InputHandler input;
@@ -26,6 +27,5 @@ private:
 	std::array<Player* ,2> players;
 	int turn;
 	Board board;
-	std::array<bool, 2> is_computer;
 };
 
