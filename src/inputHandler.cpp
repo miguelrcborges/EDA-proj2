@@ -9,7 +9,7 @@
 #endif
 
 template<typename T>
-T InputHandler::get_input(std::string prompt) {
+T InputHandler::get_input(std::string prompt) const {
   char exit_confirmation;
   T input;
 ask_input:
@@ -54,7 +54,7 @@ ask_input:
 }
 
 
-std::string InputHandler::get_string(std::string prompt) {
+std::string InputHandler::get_string(std::string prompt) const {
   char exit_confirmation;
   std::string input;
 ask_input:

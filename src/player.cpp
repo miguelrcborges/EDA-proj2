@@ -3,7 +3,7 @@
 #include <iostream>
 #include <cctype>
 
-std::string Player::get_name() {
+const std::string Player::get_name() const {
   return name;
 }
 
@@ -30,7 +30,8 @@ void Player::play(Board &board) {
       continue;
     }
     
-    board.play(column_to_play_index, symbol);
+    last_move[1] = board.play(column_to_play_index, symbol);
+    last_move[0] = column_to_play_index;
     return;
   }
 }

@@ -8,7 +8,7 @@
 class Player {
 public:
   Player(char symbol_to_set);
-  std::string get_name();
+  const std::string get_name() const;
   virtual void play(Board &board);
 
 protected:
