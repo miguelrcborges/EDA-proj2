@@ -3,12 +3,12 @@
 #include <iostream>
 #include <cctype>
 
-std::string Player::get_name() {
+const std::string Player::get_name() const {
   return name;
 }
 
 Player::Player(char symbol_to_set) {
-  name = input.get_string("What's your name?");
+  name = input.get_string("What's the player name?");
   last_move[0] = 0;
   last_move[1] = 0;
   symbol = symbol_to_set;
@@ -30,7 +30,8 @@ void Player::play(Board &board) {
       continue;
     }
     
-    board.play(column_to_play_index, symbol);
+    last_move[1] = board.play(column_to_play_index, symbol);
+    last_move[0] = column_to_play_index;
     return;
   }
 }

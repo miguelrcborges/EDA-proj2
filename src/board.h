@@ -5,13 +5,15 @@
 
 class Board {
 public:
-  Board();
-  void draw_board();
-  bool check_win();
-  bool is_playable(int column);
-  int get_width();
-  int get_height();
-  void play(int column, char symbol);
+  Board(int width, int height);
+  Board(&game_board);
+  void draw_board() const;
+  bool check_win(std::array<int, 2> last_move) const;
+  bool is_playable(int column) const;
+  std::vector<int> playable_places() const;
+  int get_width() const;
+  int get_height() const;
+  int play(int column, char symbol);
 
 private:
   std::vector<std::vector<char>> slots;
