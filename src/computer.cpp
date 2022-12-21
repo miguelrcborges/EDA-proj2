@@ -29,3 +29,7 @@ void Computer::play(Board &board) {
 
   return;
 }
+
+int Computer::get_depth() {
+  return depth;
+}
