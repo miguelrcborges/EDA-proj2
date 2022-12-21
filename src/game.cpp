@@ -39,19 +39,19 @@ Game::Game()
 	while (1)
 	{
 		height = input.get_input<int>("What's the board height?");
-		if (height < BOARD_DIMENSION_UPPER_LIMIT && height>BOARD_DIMENSION_LOWER_LIMIT) break;
+		if (height <= BOARD_DIMENSION_UPPER_LIMIT && height>=BOARD_DIMENSION_LOWER_LIMIT) break;
 		std::cout << "Please input a number between " << BOARD_DIMENSION_LOWER_LIMIT << " and " << BOARD_DIMENSION_UPPER_LIMIT << std::endl;
 	}
 	while (1)
 	{
 		width = input.get_input<int>("What's the board width?");
-		if (width < BOARD_DIMENSION_UPPER_LIMIT && width>BOARD_DIMENSION_LOWER_LIMIT) break;
+		if (width <= BOARD_DIMENSION_UPPER_LIMIT && width>=BOARD_DIMENSION_LOWER_LIMIT) break;
 		std::cout << "Please input a number between " << BOARD_DIMENSION_LOWER_LIMIT << " and " << BOARD_DIMENSION_UPPER_LIMIT << std::endl;
 	}
 	while (1)
 	{
 		to_connect = input.get_input<int>("How many symbols should one connect to win the game?");
-		if (to_connect > TO_CONNECT_LOWER_LIMIT && to_connect < std::max(height, width)) break;
+		if (to_connect >= TO_CONNECT_LOWER_LIMIT && to_connect <= std::max(height, width)) break;
 		std::cout << "Please input a valid number that is higher than " << TO_CONNECT_LOWER_LIMIT << " and possible, given your board. \n";
 	}
 
