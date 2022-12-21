@@ -19,7 +19,7 @@ void Player::play(Board &board) {
     column_to_play_input = toupper(column_to_play_input);
     int column_to_play_index = column_to_play_input - 'A';
 
-    if (column_to_play_index < 'A' || column_to_play_index > 'A' + board.get_width() - 1) {
+    if (column_to_play_input < 'A' || column_to_play_input > ('A' + board.get_width() - 1)) {
       std::cout << "Your input must be a letter between A and " << (char) ('A' + board.get_width() - 1) << '!' << std::endl;
       continue;
     }

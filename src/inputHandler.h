@@ -21,7 +21,7 @@ ask_input:
     if (std::cin >> input) {
       bool was_it_alone = std::cin.get() == '\n'; 
       if (!was_it_alone) {
-        std::cout << "Please, send only one integer number." << std::endl;
+        std::cout << "Please, send a valid value." << std::endl;
         std::cin.ignore(100000, '\n');
         goto ask_input;
       }
