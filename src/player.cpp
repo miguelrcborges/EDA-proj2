@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cctype>
 
-const std::string Player::get_name() const {
+std::string Player::get_name() const {
   return name;
 }
 
@@ -39,4 +39,8 @@ void Player::play(Board &board) {
 
 std::array<int, 2> Player::get_last_move() const {
   return last_move;
+}
+
+char Player::get_symbol() const {
+  return symbol;
 }
