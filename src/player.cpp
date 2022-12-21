@@ -1,5 +1,6 @@
 #include "player.h"
 
+#include <array>
 #include <iostream>
 #include <cctype>
 
@@ -34,4 +35,8 @@ void Player::play(Board &board) {
     last_move[0] = column_to_play_index;
     return;
   }
+}
+
+std::array<int, 2> Player::get_last_move() const {
+  return last_move;
 }
