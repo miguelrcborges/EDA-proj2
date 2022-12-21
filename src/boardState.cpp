@@ -1,5 +1,6 @@
 #include "boardState.h"
 #include <vector>
+#include <cstddef>
 
 BoardState::~BoardState() {
   for (int i = 0; i < child_states.size(); i++)
