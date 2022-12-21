@@ -1,11 +1,5 @@
 #pragma once
 
-#define NUMBER_OF_PLAYERS 2
-#define BOARD_DIMENSION_UPPER_LIMIT 10
-#define BOARD_DIMENSION_LOWER_LIMIT 6
-#define TO_CONNECT_LOWER_LIMIT 4
-#define FIRST_TURN 1
-
 #include <iostream>
 #include <string>
 #include <array>
@@ -13,6 +7,8 @@
 
 #include "board.h"
 #include "player.h"
+#include "constants.h"
+#include "inputHandler.h"
 
 
 

@@ -18,11 +18,11 @@ Game::Game()
 
 	for (int i = 0; i < NUMBER_OF_PLAYERS; i++)
 	{
-		char symbol = input.get_input<char>("Is this player a computer? Y/N ");
+		char symbol = input.get_input<char>("Is this player a computer? Y/N");
 		if (toupper(symbol) == 'Y')
 		{
 			player_symbols[i] = symbol;
-			players[i] = new Player(input.get_input<char>("Choose the player's symbol "));
+			players[i] = new Player(input.get_input<char>("Choose the player's symbol"));
 		}
 		else if (toupper(symbol) == 'N')
 		{
