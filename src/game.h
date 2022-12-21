@@ -31,6 +31,6 @@ private:
 	tm* times;
 	std::array<Player* ,2> players;
 	int turn;
-	Board board;
+	Board* board_ptr;
 };
 

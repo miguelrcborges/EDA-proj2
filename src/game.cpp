@@ -13,8 +13,9 @@
 
 Game::Game()
 {
-	for (int i=0; i<NUMBER_OF_PLAYERS; i++)
-	{ 
+	board_ptr = new Board(0, 0, 0);
+	for (int i = 0; i < NUMBER_OF_PLAYERS; i++)
+	{
 		if (toupper(input.get_input<char>("Is this player a computer? Y/N ")) == 'Y')
 		{
 			players[i] = new Player(input.get_input<char>("Choose the player's symbol "));
@@ -44,13 +45,11 @@ Game::Game()
 	while (1)
 	{
 		int to_connect = input.get_input<int>("How many symbols should one connect to win the game?");
-		if (to_connect>TO_CONNECT_LOWER_LIMIT && to_connect <std::max(height, width) break;
+		if (to_connect > TO_CONNECT_LOWER_LIMIT && to_connect < std::max(height, width)) break;
 		std::cout << "Please input a valid number that is higher than " << TO_CONNECT_LOWER_LIMIT << " and possible, given your board. \n";
 	}
-	
 
-	this->board = Board::board(width,height,to_connect);
-	
+	*board_ptr = Board(width, height, to_connect);
 	turn = FIRST_TURN;
 	time_t current_time = time(NULL);
 	times = localtime(&current_time);
@@ -112,14 +111,13 @@ Game::~Game()
 
 void Game::loop() const
 {
-	while (turn < board.get_height() * board.get_width()) {
-		board.draw_board();
-		(players[(turn-1)%2])->play(&board)
-		if (board.check_win((players[++turn % 2])->get_last_move()))
-			break;
+	while (turn < board_ptr->get_height() * board_ptr->get_width()) {
+		board_ptr->draw_board();
+		(players[(turn - 1) % 2])->play(&(*board_ptr));
+		if (board_ptr->check_win((players[++turn % 2])->get_last_move())) break;
 	}
-	board.draw_board();
-	if (board.check_win(players[turn % 2]->get_last_move()))
+	board_ptr->draw_board();
+	if (board_ptr->check_win(players[turn % 2]->get_last_move()))
 	{
 		std::cout << "Winner is " << (players[turn % 2])->get_name() << "! Congratulations!" << std::endl;
 	}
