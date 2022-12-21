@@ -62,18 +62,57 @@ Game::~Game()
 
 	out.open("match logs.txt", std::ios_base::app);
 	out << std::setfill('0');
-	out << times->tm_year + 1900 << " - " << times->tm_mon + 1 << " - " << times->tm_mday << " / " 
+	out << times->tm_year + 1900 << " - " << times->tm_mon + 1 << " - " << times->tm_mday << " / "  //tm_year needs to be converted by adding 1900 and tm_mon by adding 1
 		<< times->tm_hour << ":" << std::setw(2) << times->tm_min << " - 1) " << (players[0])->get_name;
-	
+
+	Computer* tmp_p = dynamic_cast<Computer*> players[0];
+
+	if (tmp_p != NULL)
+	{
+		out << " (CPU - " << static_cast<Computer*>(players[0])->get_depth() << ')';
+	}
+	out << " vs 2) " << (players[1])->get_name();
+
+	tmp_p = dynamic_cast<Computer*> players[1];
+	if (tmp_p != NULL)
+	{
+		out << " (CPU - " << static_cast<Computer*>(players[1])->get_depth() << ')';
+	}
+	if (board.check_win(players[turn % 2]->get_last_move()))
+	{
+		out << " - vencedor : ";
+		if (turn % 2 == 0)
+		{
+			out << "1) " << (players[0])->get_name();
+		}
+		else
+		{
+			out << "2) " << players[1]->get_name();
+		}
+		
+		tmp_p = dynamic_cast<Computer*> players[turn%2];
+		if (tmp_p != NULL)
+		{
+			out << " (CPU - " << static_cast<Computer*>(players[turn % 2])->get_depth() << ')';
+		}
+	}
+	else
+	{
+		out << " - Empate";
+	}
+	out << ".\n";
+	out.close();
+
 	for (int i = 0; i < NUMBER_OF_PLAYERS; i++)
 	{
 		delete players[i]
 	}
+	delete tmp_p;
 }
 
 void Game::loop() const
 {
-	while (turn < board.get_height * board.get_width) {
+	while (turn < board.get_height() * board.get_width()) {
 		board.draw_board();
 		(players[(turn-1)%2])->play(&board)
 		if (board.check_win((players[++turn % 2])->get_last_move()))
@@ -82,7 +121,7 @@ void Game::loop() const
 	board.draw_board();
 	if (board.check_win(players[turn % 2]->get_last_move()))
 	{
-		std::cout << "Winner is " << (players[turn % 2])->get_name << "! Congratulations!" << std::endl;
+		std::cout << "Winner is " << (players[turn % 2])->get_name() << "! Congratulations!" << std::endl;
 	}
 	else
 	{
