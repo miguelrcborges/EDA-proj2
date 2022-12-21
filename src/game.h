@@ -19,13 +19,16 @@
 /**
 * Our Game class. This class initializes each match that is played, containing information related
 * to the board, to the players in play and the time of play.
-* It also registers the results after match end
+* It also registers the results after match end.
 */
 class Game {
 public:
-	Game(); //initialization of the game class
-	~Game(); //end of match; logs the results
-	void loop() const;
+	/** Initialization of the Game class. */
+	Game(); 
+	/** End of match; logs the results, desctructor of Game class. */
+	~Game();
+	/** Loop of game. */
+	void loop(); 
 private:
 	InputHandler input;
 	tm* times;

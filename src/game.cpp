@@ -13,15 +13,20 @@
 
 Game::Game()
 {
-	board_ptr = new Board(0, 0, 0);
+	board_ptr = new Board(0, 0, 0, 'X', 'O');
+	std::array<char, NUMBER_OF_PLAYERS> player_symbols;
+
 	for (int i = 0; i < NUMBER_OF_PLAYERS; i++)
 	{
-		if (toupper(input.get_input<char>("Is this player a computer? Y/N ")) == 'Y')
+		char symbol = input.get_input<char>("Is this player a computer? Y/N ");
+		if (toupper(symbol) == 'Y')
 		{
+			player_symbols[i] = symbol;
 			players[i] = new Player(input.get_input<char>("Choose the player's symbol "));
 		}
-		else if (toupper(input.get_input<char>("Is this player a computer? Y/N ")) == 'N')
+		else if (toupper(symbol) == 'N')
 		{
+			player_symbols[i] = symbol;
 			players[i] = new Computer(input.get_input<char>("Choose the player's symbol"));
 		}
 		else
@@ -49,7 +54,7 @@ Game::Game()
 		std::cout << "Please input a valid number that is higher than " << TO_CONNECT_LOWER_LIMIT << " and possible, given your board. \n";
 	}
 
-	*board_ptr = Board(width, height, to_connect);
+	*board_ptr = Board(width, height, to_connect, player_symbols[0], player_symbols[1]);
 	turn = FIRST_TURN;
 	time_t current_time = time(NULL);
 	times = localtime(&current_time);
@@ -68,14 +73,14 @@ Game::~Game()
 
 	if (tmp_p != NULL)
 	{
-		out << " (CPU - " << static_cast<Computer*>(players[0])->get_depth() << ')';
+		out << " (CPU - " << tmp_p->get_depth() << ')';
 	}
 	out << " vs 2) " << (players[1])->get_name();
 
 	tmp_p = dynamic_cast<Computer*> players[1];
 	if (tmp_p != NULL)
 	{
-		out << " (CPU - " << static_cast<Computer*>(players[1])->get_depth() << ')';
+		out << " (CPU - " << tmp_p->get_depth() << ')';
 	}
 	if (board.check_win(players[turn % 2]->get_last_move()))
 	{
@@ -92,7 +97,7 @@ Game::~Game()
 		tmp_p = dynamic_cast<Computer*> players[turn%2];
 		if (tmp_p != NULL)
 		{
-			out << " (CPU - " << static_cast<Computer*>(players[turn % 2])->get_depth() << ')';
+			out << " (CPU - " << tmp_p->get_depth() << ')';
 		}
 	}
 	else
@@ -109,7 +114,7 @@ Game::~Game()
 	delete tmp_p;
 }
 
-void Game::loop() const
+void Game::loop()
 {
 	while (turn < board_ptr->get_height() * board_ptr->get_width()) {
 		board_ptr->draw_board();
