@@ -1,4 +1,8 @@
 #define NUMBER_OF_PLAYERS 2
+#define BOARD_DIMENSION_UPPER_LIMIT 10
+#define BOARD_DIMENSION_LOWER_LIMIT 6
+#define TO_CONNECT_LOWER_LIMIT 4
+#define FIRST_TURN 1
 
 #include <iostream>
 #include <string>
@@ -21,6 +25,7 @@ class Game {
 public:
 	Game(); //initialization of the game class
 	~Game(); //end of match; logs the results
+	void loop() const;
 private:
 	InputHandler input;
 	tm* times;
