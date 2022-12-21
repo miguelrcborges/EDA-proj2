@@ -11,7 +11,7 @@
 #include "game.h"
 #include "computer.h"
 
-Game::Game()
+Game::Game() : input(), board(input.get_input<int>("What's the board height?"), input.get_input<int>("What's the board width?"), input.get_input<int>("How many symbols shouls one connect to win the game?"), 'X', 'O')
 {
 	board_ptr = new Board(0, 0, 0, 'X', 'O');
 	std::array<char, NUMBER_OF_PLAYERS> player_symbols;
@@ -35,6 +35,7 @@ Game::Game()
 			std::cout << "Please provide a valid answer to the question \n";
 		}
 	}
+
 	while (1)
 	{
 		int height = input.get_input<int>("What's the board height?");
@@ -56,6 +57,7 @@ Game::Game()
 
 	*board_ptr = Board(width, height, to_connect, player_symbols[0], player_symbols[1]);
 	turn = FIRST_TURN;
+
 	time_t current_time = time(NULL);
 	times = localtime(&current_time);
 }
@@ -66,6 +68,7 @@ Game::~Game()
 
 	out.open("match logs.txt", std::ios_base::app);
 	out << std::setfill('0');
+
 	out << times->tm_year + 1900 << " - " << times->tm_mon + 1 << " - " << times->tm_mday << " / "  //tm_year needs to be converted by adding 1900 and tm_mon by adding 1
 		<< times->tm_hour << ":" << std::setw(2) << times->tm_min << " - 1) " << (players[0])->get_name;
 
@@ -109,7 +112,7 @@ Game::~Game()
 
 	for (int i = 0; i < NUMBER_OF_PLAYERS; i++)
 	{
-		delete players[i]
+		delete players[i];
 	}
 	delete tmp_p;
 }

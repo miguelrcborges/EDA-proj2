@@ -7,13 +7,57 @@
 
 class Player {
 public:
+  /**
+  * The way we will start
+  */
   Player(char symbol_to_set);
-  const std::string get_name() const;
+
+  /**
+  * Method that makes it able to get the player's name from the outside.
+  *
+  * @return Player's name.
+  */
+  std::string get_name() const;
+
+  /**
+  * Method that makes it able to get the player's last moves from the outside.
+  *
+  * @return Last move coordinates.
+  */
+  std::array<int, 2> get_last_move() const;
+
+  /**
+  * Method that makes it able to get the player symbol from the outside.
+  *
+  * @return Player symbol.
+  */
+  char get_symbol() const;
+
+  /**
+  * Method that makes an able able to play.
+  *
+  * @param board Board where the play is going to play.
+  */
   virtual void play(Board &board);
 
 protected:
+  /** 
+  * Element that makes it able to ask the user for stdin inputs.
+  */
   InputHandler input;
-  std::string name;
+  
+  /**
+  * Player name. Used on the logs and to specify who is playing.
+  */
+  const std::string name;
+
+  /**
+  * Array with the coordinates of the last played move. Speeds up the win verification.
+  */
   std::array<int, 2> last_move;
-  char symbol;
+
+  /**
+  * Player symbol.
+  */
+  const char symbol;
 };

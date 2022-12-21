@@ -20,7 +20,7 @@ BoardState::BoardState(Board &game_board, int depth, char symbol_to_play) : boar
   if (depth > 0)
     for (int i = 0; board.get_width(); i++)
       if (board.is_playable(i)) {
-        child_states[i] = new BoardState(game_board, depth - 1, symbol_to_play == 'X' ? 'O' : 'X');
+        child_states[i] = new BoardState(game_board, depth - 1, symbol_to_play == board.get_symbol(0) ? board.get_symbol(1) : board.get_symbol(0));
         child_states[i]->board.play(i, symbol_to_play);
       }
 }

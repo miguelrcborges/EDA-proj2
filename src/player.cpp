@@ -1,22 +1,21 @@
 #include "player.h"
 
+#include <array>
 #include <iostream>
 #include <cctype>
 
-const std::string Player::get_name() const {
+std::string Player::get_name() const {
   return name;
 }
 
-Player::Player(char symbol_to_set) {
-  name = input.get_string("What's the player name?");
+Player::Player(char symbol_to_set) : symbol(symbol_to_set), name(input.get_string("What's the player name?")) {
   last_move[0] = 0;
   last_move[1] = 0;
-  symbol = symbol_to_set;
 }
 
 void Player::play(Board &board) {
   while (true) {
-    char column_to_play_input = input.get_input<char>("On which column do you want to play in?");
+    char column_to_play_input = input.get_input<char>("On which column do you want to play in, " + name + "?");
     column_to_play_input = toupper(column_to_play_input);
     int column_to_play_index = column_to_play_input - 'A';
 
@@ -34,4 +33,12 @@ void Player::play(Board &board) {
     last_move[0] = column_to_play_index;
     return;
   }
+}
+
+std::array<int, 2> Player::get_last_move() const {
+  return last_move;
+}
+
+char Player::get_symbol() const {
+  return symbol;
 }
