@@ -23,10 +23,9 @@ void Computer::play(Board &board) {
     columns_to_play = state.get_best_moves(symbol);
   }
 
-  int column_to_play = rand() % columns_to_play.size();
-  std::cout << "The computer " << name << " has played on " << (char) (column_to_play + 'A') << '.' << std::endl;
-  last_move[1] = board.play(columns_to_play[column_to_play], symbol);
-  last_move[0] = column_to_play;
+  int index_to_play = rand() % columns_to_play.size();
+  last_move[1] = board.play(columns_to_play[index_to_play], symbol);
+  last_move[0] = columns_to_play[index_to_play];
 
   return;
 }
