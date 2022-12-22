@@ -4,9 +4,9 @@
 
 int main() {
 	InputHandler input;
+	srand(time(NULL));
 	do
 	{
-		srand(time(NULL));
 		Game game;
 		game.loop();
 		char play_again = toupper(input.get_input<char>("Do you want to play again? Y/N"));
