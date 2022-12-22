@@ -74,7 +74,7 @@ Game::~Game()
 	out << times->tm_year + 1900 << " - " << times->tm_mon + 1 << " - " << times->tm_mday << " / "  //tm_year needs to be converted by adding 1900 and tm_mon by adding 1
 		<< times->tm_hour << ":" << std::setw(2) << times->tm_min << " - 1) " << (players[0])->get_name();
 
-	Computer* tmp_p = dynamic_cast<Computer*>(players[0]);
+	Computer* tmp_p = dynamic_cast<Computer*>(players[0]); // tentativa de dar cast a players[0] como um pointer para Computer. Caso não seja computador, tmp_p = NULL
 
 	if (tmp_p != NULL)
 	{
@@ -87,6 +87,7 @@ Game::~Game()
 	{
 		out << " (CPU - " << tmp_p->get_depth() << ')';
 	}
+
 	if (board_ptr->check_win(players[turn % 2]->get_last_move()))
 	{
 		out << " - vencedor : ";
@@ -122,13 +123,13 @@ void Game::loop()
 {
 	while (turn <= board_ptr->get_height() * board_ptr->get_width()) {
 		board_ptr->draw_board();
-		(players[(turn - 1) % 2])->play(*board_ptr);
-		if (board_ptr->check_win((players[++turn % 2])->get_last_move())) break;
+		players[(turn - 1) % 2]->play(*board_ptr);
+		if (board_ptr->check_win(players[++turn % 2]->get_last_move())) break;
 	}
 	board_ptr->draw_board();
 	if (board_ptr->check_win(players[turn % 2]->get_last_move()))
 	{
-		std::cout << "Winner is " << (players[turn % 2])->get_name() << "! Congratulations!" << std::endl;
+		std::cout << "Winner is " << players[turn % 2]->get_name() << "! Congratulations!" << std::endl;
 	}
 	else
 	{
