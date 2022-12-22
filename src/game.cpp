@@ -24,7 +24,6 @@ Game::Game()
 			player_symbols[i] = input.get_input<char>("Choose the player's symbol");
 		}
 		char user_input = input.get_input<char>("Is this player a computer? Y/N");
-		char tmp_sb;
 		if (toupper(user_input) == 'N')
 		{
 			players[i] = new Player(player_symbols[i]);
