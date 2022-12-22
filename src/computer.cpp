@@ -11,6 +11,7 @@ Computer::Computer(char symbol_to_set) : Player(symbol_to_set) {
     std::cout << "WARNING: The depth is high, it may take some time for the computer to play." << std::endl;
   else if (depth < 0)
     std::cout << "WARNING: Values of depth lower than 0 are the same to 0." << std::endl;
+  state = NULL;
 }
 
 void Computer::play(Board &board) {
