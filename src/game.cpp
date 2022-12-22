@@ -119,7 +119,7 @@ Game::~Game()
 
 void Game::loop()
 {
-	while (turn < board_ptr->get_height() * board_ptr->get_width()) {
+	while (turn <= board_ptr->get_height() * board_ptr->get_width()) {
 		board_ptr->draw_board();
 		(players[(turn - 1) % 2])->play(*board_ptr);
 		if (board_ptr->check_win((players[++turn % 2])->get_last_move())) break;

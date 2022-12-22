@@ -24,8 +24,12 @@ void Computer::play(Board &board) {
   }
 
   int index_to_play = rand() % columns_to_play.size();
+  #ifdef _DEBUG
+  std::cout << "Available moves: " << columns_to_play.size() << " choosed to play " << index_to_play << std::endl;
+  #endif 
   last_move[1] = board.play(columns_to_play[index_to_play], symbol);
   last_move[0] = columns_to_play[index_to_play];
+  std::cout << "The computer " << name << " played on " << (char) ('A' + last_move[0]) << '.' << std::endl;
 
   return;
 }
