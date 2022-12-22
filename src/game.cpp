@@ -15,27 +15,30 @@ Game::Game()
 {
 	int height, width, to_connect;
 	std::array<char, NUMBER_OF_PLAYERS> player_symbols;
-
 	for (int i = 0; i < NUMBER_OF_PLAYERS; i++)
 	{
+		player_symbols[i] = input.get_input<char>("Choose the player's symbol");
+		while (i != 0 && player_symbols[i - 1] == player_symbols[i])
+		{
+			std::cout << "Oh no! It seems you have chosen a symbol that's already chosen. PLease try another \n";
+			player_symbols[i] = input.get_input<char>("Choose the player's symbol");
+		}
 		char user_input = input.get_input<char>("Is this player a computer? Y/N");
+		char tmp_sb;
 		if (toupper(user_input) == 'N')
 		{
-			player_symbols[i] = input.get_input<char>("Choose the player's symbol");
 			players[i] = new Player(player_symbols[i]);
 		}
 		else if (toupper(user_input) == 'Y')
 		{
-			player_symbols[i] = input.get_input<char>("Choose the player's symbol");
 			players[i] = new Computer(player_symbols[i]);
 		}
 		else
 		{
 			i--;
 			std::cout << "Please provide a valid answer to the question \n";
-		}
+		}			
 	}
-
 	while (1)
 	{
 		height = input.get_input<int>("What's the board height?");
@@ -114,7 +117,6 @@ Game::~Game()
 	{
 		delete players[i];
 	}
-	delete tmp_p;
 }
 
 void Game::loop()
