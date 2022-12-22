@@ -1,6 +1,7 @@
 #pragma once
 
 #include "player.h"
+#include "boardState.h"
 
 class Computer : public Player {
 public:
@@ -10,4 +11,5 @@ public:
 
 private:
   int depth;
+  BoardState *state;
 };

@@ -19,8 +19,12 @@ void Computer::play(Board &board) {
   if (depth <= 0) {
     columns_to_play = board.playable_columns();
   } else {
-    BoardState state(board, depth, symbol);
-    columns_to_play = state.get_best_moves(symbol);
+    if (state == NULL) {
+      state = new BoardState(board, depth, symbol);
+    } else {
+      state = state->update_state(last_move[0], board.get_last_played_column());
+    }
+    columns_to_play = state->get_best_moves(symbol);
   }
 
   int index_to_play = rand() % columns_to_play.size();

@@ -25,6 +25,7 @@ public:
   void draw_board() const;
   bool check_win(std::array<int, 2> last_move) const;
   bool is_playable(int column) const;
+  int get_last_played_column() const;
   std::vector<int> playable_columns() const;
 
   /**
@@ -62,6 +63,7 @@ public:
 private:
   std::vector<std::vector<char>> slots;
   void print_header() const;
+  int last_played_column;
   const int to_connect;
   const std::array<char, NUMBER_OF_PLAYERS> symbols;
 };

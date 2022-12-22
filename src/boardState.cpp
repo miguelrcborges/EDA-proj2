@@ -25,10 +25,10 @@ BoardState::BoardState(Board &game_board, int depth, char symbol) : board(game_b
       //int row = tmp.play(i, symbol_to_play);
       //child_states.push_back(new BoardState(tmp, depth - 1, symbol_to_play == board.get_symbol(0) ? board.get_symbol(1) : board.get_symbol(0)));
       int row;
-      int index = child_states.size();
-      child_states.push_back(new BoardState(board, depth, symbol, i, row));
-      child_states[index]->last_move[1] = row;
-      child_states[index]->last_move[0] = i;
+      BoardState *tmp = new BoardState(board, depth, symbol_to_play, i, row);
+      tmp->last_move[1] = row;
+      tmp->last_move[0] = i;
+      child_states.push_back(tmp);
     }
   }
 }
@@ -37,19 +37,24 @@ BoardState::BoardState(Board &game_board, int parents_depth, char symbol_playing
   row = board.play(column, symbol_playing);
   symbol_to_play = symbol_playing == board.get_symbol(0) ? board.get_symbol(1) : board.get_symbol(0);
   depth = parents_depth - 1;
+  value = 0;
   if (depth <= 0) return;
   for (int i = 0; i < board.get_width(); i++) {
     if (board.is_playable(i)) {
       int row;
-      int index = child_states.size();
-      child_states.push_back(new BoardState(board, depth, symbol_to_play, i, row));
-      child_states[index]->last_move[1] = row;
-      child_states[index]->last_move[0] = i;
+      BoardState *tmp = new BoardState(board, depth, symbol_to_play, i, row);
+      tmp->last_move[1] = row;
+      tmp->last_move[0] = i;
+      child_states.push_back(tmp);
     }
   }
 }
 
 void BoardState::evaluate(char player_symbol) {
+  if (value != 0) {
+    value += 2 * (value > 0);
+  }
+
   if (board.check_win(last_move)) {
     value = symbol_to_play != player_symbol ? depth + 1 : - depth - 1;
     return;
@@ -100,4 +105,52 @@ std::vector<int> BoardState::get_best_moves(char player_symbol) const {
   }
 
   return best_moves;
+}
+
+
+BoardState *BoardState::update_state(int computer_move, int opponent_move) {
+  BoardState *return_p;
+  for (int i = 0; i < child_states.size(); i++) {
+    if (child_states[i]->last_move[0] != computer_move) continue;
+    for (int ii = 0; ii < child_states[i]->child_states.size(); ii++) {
+      if (child_states[i]->child_states[ii]->last_move[0] != opponent_move) continue;
+      return_p = child_states[i]->child_states[ii];
+      child_states[i]->child_states[ii] = NULL;
+
+      goto outside;
+    } 
+  }
+outside:
+  return_p->increment_depth();
+  return_p->generate_missing_states();
+
+  delete this;
+  return return_p;
+}
+
+void BoardState::increment_depth() {
+  depth += 2;
+  for (int i = 0; i < child_states.size(); i++) {
+    child_states[i]->increment_depth();
+  }
+}
+
+void BoardState::generate_missing_states() {
+  if (value != 0) return;
+  if (depth <= 0) return;
+  if (child_states.size() == 0) {
+    for (int i = 0; i < board.get_width(); i++) {
+      if (board.is_playable(i)) {
+        int row;
+        BoardState *tmp = new BoardState(board, depth, symbol_to_play, i, row);
+        tmp->last_move[1] = row;
+        tmp->last_move[0] = i;
+        child_states.push_back(tmp);
+      }
+    }
+  } else {
+    for (int i = 0; i < child_states.size(); i++) {
+      child_states[i]->generate_missing_states();
+    }
+  }
 }

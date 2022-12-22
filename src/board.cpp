@@ -107,6 +107,7 @@ int Board::play(int column, char symbol) {
 	while (1) {
 		if (slots[column][row] == ' ') {
 			slots[column][row] = symbol;
+			last_played_column = column;
 			return row;
 		}	
 		row++;
@@ -132,4 +133,8 @@ void Board::print_header() const {
 
 char Board::get_symbol(int player) const {
 	return symbols[player];
+}
+
+int Board::get_last_played_column() const {
+	return last_played_column;
 }
