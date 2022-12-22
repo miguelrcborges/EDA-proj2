@@ -20,31 +20,56 @@
 class Board {
 public:
   Board(int width, int height, int to_connect, char player_one_symbol, char player_two_symbol);
+  
+  /**
+  * NAAAAOA SEI E O CONSTRUTOR;
+  */
   Board(Board &game_board);
+  
+  /**
+  * Prints the board on the console;
+  */
   void draw_board() const;
+  
+  /**
+  * @param last_move Coordinates of the last placed piece;
+  * @return if someone won the game;
+  */
   bool check_win(std::array<int, 2> last_move) const;
+  
+  /**
+  * Checks if given column has empty slots;
+  *
+  * @param column Column to check;
+  * @return if someone given column has empty slots;
+  */
   bool is_playable(int column) const;
+  
+  /**
+  * vector countaining the indexes of collumns that haven't been filled;
+  * important for the AI;
+  */
   std::vector<int> playable_columns() const;
 
   /**
-  * Method to get width
+  * Method to get width;
   *
-  * @return Board width 
+  * @return Board width;
   */
   int get_width() const;
 
   /**
-  * Method to get height
+  * Method to get height;
   *
-  * @return Board height
+  * @return Board height;
   */
   int get_height() const;
 
   /**
-  * Returns the player symbol of the given index
+  * Returns the player symbol of the given index;
   *
-  * @param player Index of the player to get the symbol
-  * @return Player symbol
+  * @param player Index of the player to get the symbol;
+  * @return Player symbol;
   */
   char get_symbol(int player) const;
 
