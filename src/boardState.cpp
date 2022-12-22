@@ -17,17 +17,36 @@ BoardState::BoardState(Board &game_board, int depth, char symbol) : board(game_b
   this->depth = depth; 
   this->symbol_to_play = symbol;
 
-  if (depth > 0) {
-    for (int i = 0; i < board.get_width(); i++) {
-      if (board.is_playable(i)) {
-        Board tmp(game_board);
-        int row = tmp.play(i, symbol_to_play);
-        child_states.push_back(new BoardState(tmp, depth - 1, symbol_to_play == board.get_symbol(0) ? board.get_symbol(1) : board.get_symbol(0)));
-        child_states[i]->last_move[1] = row;
-        child_states[i]->last_move[0] = i;
-      } else {
-        child_states.push_back(NULL);
-      }
+  if (depth <= 0) return;
+  for (int i = 0; i < board.get_width(); i++) {
+    if (board.is_playable(i)) {
+      // Old implementation. It is bad since creates another board unnecessarily, so I created a BoardState method to do this better
+      //Board tmp(game_board);
+      //int row = tmp.play(i, symbol_to_play);
+      //child_states.push_back(new BoardState(tmp, depth - 1, symbol_to_play == board.get_symbol(0) ? board.get_symbol(1) : board.get_symbol(0)));
+      int row;
+      child_states.push_back(new BoardState(board, depth, symbol, i, row));
+      child_states[i]->last_move[1] = row;
+      child_states[i]->last_move[0] = i;
+    } else {
+      child_states.push_back(NULL);
+    }
+  }
+}
+
+BoardState::BoardState(Board &game_board, int parents_depth, char symbol_playing, int column, int &row) : board(game_board) {
+  row = board.play(column, symbol_playing);
+  symbol_to_play = symbol_playing == board.get_symbol(0) ? board.get_symbol(1) : board.get_symbol(0);
+  depth = parents_depth - 1;
+  if (depth <= 0) return;
+  for (int i = 0; i < board.get_width(); i++) {
+    if (board.is_playable(i)) {
+      int row;
+      child_states.push_back(new BoardState(board, depth, symbol_to_play, i, row));
+      child_states[i]->last_move[1] = row;
+      child_states[i]->last_move[0] = i;
+    } else {
+      child_states.push_back(NULL);
     }
   }
 }

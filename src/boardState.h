@@ -7,6 +7,7 @@
 class BoardState {
 public:
   BoardState(Board &game_board, int depth, char symbol_to_play);
+  BoardState(Board &game_board, int parents_depth, char symbol_playing, int column, int &row);
   ~BoardState();
   std::vector<int> get_best_moves(char player_symbol) const;
 private:
