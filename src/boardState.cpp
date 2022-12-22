@@ -25,11 +25,10 @@ BoardState::BoardState(Board &game_board, int depth, char symbol) : board(game_b
       //int row = tmp.play(i, symbol_to_play);
       //child_states.push_back(new BoardState(tmp, depth - 1, symbol_to_play == board.get_symbol(0) ? board.get_symbol(1) : board.get_symbol(0)));
       int row;
+      int index = child_states.size();
       child_states.push_back(new BoardState(board, depth, symbol, i, row));
-      child_states[i]->last_move[1] = row;
-      child_states[i]->last_move[0] = i;
-    } else {
-      child_states.push_back(NULL);
+      child_states[index]->last_move[1] = row;
+      child_states[index]->last_move[0] = i;
     }
   }
 }
@@ -42,11 +41,10 @@ BoardState::BoardState(Board &game_board, int parents_depth, char symbol_playing
   for (int i = 0; i < board.get_width(); i++) {
     if (board.is_playable(i)) {
       int row;
+      int index = child_states.size();
       child_states.push_back(new BoardState(board, depth, symbol_to_play, i, row));
-      child_states[i]->last_move[1] = row;
-      child_states[i]->last_move[0] = i;
-    } else {
-      child_states.push_back(NULL);
+      child_states[index]->last_move[1] = row;
+      child_states[index]->last_move[0] = i;
     }
   }
 }
@@ -64,7 +62,7 @@ void BoardState::evaluate(char player_symbol) {
 
   value = symbol_to_play == player_symbol ? - depth - 1 : depth + 1; 
   for (int i = 0; i < child_states.size(); i++) {
-    if (child_states[i] == NULL) continue;
+    //if (child_states[i] == NULL) continue;
 
     child_states[i]->evaluate(player_symbol);
     if (
@@ -77,9 +75,8 @@ void BoardState::evaluate(char player_symbol) {
 std::vector<int> BoardState::get_best_moves(char player_symbol) const {
   std::vector<int> best_moves;
   int best_value;
-
   for (int i = 0; i < child_states.size(); i++) {
-    if (child_states[i] == NULL) continue;
+    //if (child_states[i] == NULL) continue;
 
     child_states[i]->evaluate(player_symbol);
     #ifdef _DEBUG
