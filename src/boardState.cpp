@@ -84,7 +84,7 @@ std::vector<int> BoardState::get_best_moves(char player_symbol) const {
     //if (child_states[i] == NULL) continue;
 
     child_states[i]->evaluate(player_symbol);
-    #ifdef _DEBUG
+    #ifdef _MDEBUG
     std::cout << "Position " << i << ": " << child_states[i]->value << "\tx: " << child_states[i]->last_move[0] << " y: " << child_states[i]->last_move[1] << std::endl;
     #endif
 
@@ -99,7 +99,7 @@ std::vector<int> BoardState::get_best_moves(char player_symbol) const {
     } else if (child_states[i]->value == best_value) {
       best_moves.push_back(child_states[i]->last_move[0]);
     }
-    #ifdef _DEBUG
+    #ifdef _MDEBUG
     std::cout << "Possible moves: " << best_moves.size() << std::endl;
     #endif
   }
@@ -109,7 +109,7 @@ std::vector<int> BoardState::get_best_moves(char player_symbol) const {
 
 
 BoardState *BoardState::update_state(int computer_move, int opponent_move) {
-  BoardState *return_p;
+  BoardState *return_p = NULL;
   for (int i = 0; i < child_states.size(); i++) {
     if (child_states[i]->last_move[0] != computer_move) continue;
     for (int ii = 0; ii < child_states[i]->child_states.size(); ii++) {
@@ -120,6 +120,7 @@ BoardState *BoardState::update_state(int computer_move, int opponent_move) {
       goto outside;
     } 
   }
+  return return_p;
 outside:
   return_p->increment_depth();
   return_p->generate_missing_states();
