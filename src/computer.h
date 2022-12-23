@@ -35,13 +35,14 @@ public:
   int get_depth();
 
 private:
+  
   /**
-  * Number of turns that the computer's AI simulates.
+  * Number of turns the computer simulates.
   */
   int depth;
-
+  
   /**
-  * Pointer corresponding to the game's current state.
+  * Pointer corresponding to the game's current State.
   */
   BoardState *state;
 };

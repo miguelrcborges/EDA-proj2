@@ -14,7 +14,9 @@
 class Player {
 public:
   /**
-  * The way we will start
+  * Constructor.
+  *
+  * @param Symbol to represent the player.
   */
   Player(char symbol_to_set);
 
