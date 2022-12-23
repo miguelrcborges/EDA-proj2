@@ -18,18 +18,20 @@ public:
     * If it receives an invalid input, asks
     * to re-entrer input until it is valid.
     *
+    * If the user sends EOF, it asks if the user wants to leave.
+    *
     * @return Valid input.
     */
     T get_input(std::string prompt) const {
         char exit_confirmation;
         T input;
-        //asks for input until it has a valid one.
+        // Asks for input until it has a valid one.
     ask_input:
         std::cout << prompt << "\n> ";
 
         if (std::cin >> input) {
             bool was_it_alone = std::cin.get() == '\n';
-            //return to the beggining if the received input is not valid.
+            // Returns to the beggining if the received input is not valid.
             if (!was_it_alone) {
                 std::cout << "Please, send a valid value." << std::endl;
                 std::cin.ignore(100000, '\n');
@@ -38,7 +40,7 @@ public:
             return input;
         }
 
-        //if the user types EOF.
+        // If the user types EOF.
         do {
             std::cout << "\nDo you really want to quit? (Y/N)\n> ";
             bool eof = std::cin.eof();
@@ -73,7 +75,8 @@ public:
     * @return Valid input.
     */
     std::string get_string(std::string prompt) const {
-
+        // The code is redudant with the previous function
+        // so it can resee the same comments.
         char exit_confirmation;
         std::string input;
     ask_input:

@@ -14,21 +14,25 @@ Player::Player(char symbol_to_set) : symbol(symbol_to_set), name(input.get_strin
 }
 
 void Player::play(Board &board) {
+  // Loops until gets a valid loop/
   while (true) {
     char column_to_play_input = input.get_input<char>("On which column do you want to play in, " + name + "?");
     column_to_play_input = toupper(column_to_play_input);
     int column_to_play_index = column_to_play_input - 'A';
 
+    // If column does not exist.
     if (column_to_play_input < 'A' || column_to_play_input > ('A' + board.get_width() - 1)) {
       std::cout << "Your input must be a letter between A and " << (char) ('A' + board.get_width() - 1) << '!' << std::endl;
       continue;
     }
 
+    // If column is filled.
     if (!board.is_playable(column_to_play_index)) {
       std::cout << "That column is already stacked!" << std::endl;
       continue;
     }
     
+    // Plays
     last_move[1] = board.play(column_to_play_index, symbol);
     last_move[0] = column_to_play_index;
     return;
