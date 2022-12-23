@@ -74,7 +74,7 @@ Game::~Game()
 	out << times->tm_year + 1900 << " - " << times->tm_mon + 1 << " - " << times->tm_mday << " / "  //tm_year needs to be converted by adding 1900 and tm_mon by adding 1
 		<< times->tm_hour << ":" << std::setw(2) << times->tm_min << " - 1) " << (players[0])->get_name();
 
-	Computer* tmp_p = dynamic_cast<Computer*>(players[0]); // tentativa de dar cast a players[0] como um pointer para Computer. Caso não seja computador, tmp_p = NULL
+	Computer* tmp_p = dynamic_cast<Computer*>(players[0]); // Trying to cast players[0] as a pointer to Computer. If it's not a computer, tmp_p = NULL
 
 	if (tmp_p != NULL)
 	{
