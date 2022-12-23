@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['loop_0',['loop',['../class_game.html#a7ad92b77b596d7882a7ae76eb18b5e6c',1,'Game']]]
+  ['increment_5fdepth_0',['increment_depth',['../class_board_state.html#a1d916a00439209ece231559d0d6f2084',1,'BoardState']]],
+  ['is_5fplayable_1',['is_playable',['../class_board.html#a6abe2cf2bc00b8317085a74d20760ba8',1,'Board']]]
 ];

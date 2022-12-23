@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['name_0',['name',['../class_player.html#a32ff83e564e074fc99b3ae3ec0a561f7',1,'Player']]]
+  ['depth_0',['depth',['../class_board_state.html#ac015a29ed516402e8e243f9469265080',1,'BoardState::depth()'],['../class_computer.html#ab3046cf07b2f42de721d2845f0ddfe9a',1,'Computer::depth()']]]
 ];

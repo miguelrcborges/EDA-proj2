@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['last_5fmove_0',['last_move',['../class_player.html#a49ca4fd5009bb05c0be3e9cdf3ba3238',1,'Player']]]
+  ['child_5fstates_0',['child_states',['../class_board_state.html#a85d7f3c67e0ee38ad976cef2a3bc3eec',1,'BoardState']]]
 ];

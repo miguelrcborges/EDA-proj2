@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['_7eboardstate_0',['~BoardState',['../class_board_state.html#a26ee73b8f86234737acba4975cc0b145',1,'BoardState']]],
-  ['_7egame_1',['~Game',['../class_game.html#ae3d112ca6e0e55150d2fdbc704474530',1,'Game']]]
+  ['play_0',['play',['../class_board.html#a2f7e1ae6949edb313ce2ebbfd8efe188',1,'Board::play()'],['../class_computer.html#a8eb6abb2126a062dc5eccc681a7ae1d4',1,'Computer::play()'],['../class_player.html#a8f30d59bf8cbd6d87d82e6c8e8517550',1,'Player::play()']]],
+  ['playable_5fcolumns_1',['playable_columns',['../class_board.html#ab7fdaef82f7a886dc682d02144395d93',1,'Board']]],
+  ['player_2',['Player',['../class_player.html#af2d57309c860c1784e0d8c8da916919b',1,'Player']]],
+  ['print_5fheader_3',['print_header',['../class_board.html#a8f8de06513c605c6cbbe50f41c75cbf5',1,'Board']]]
 ];

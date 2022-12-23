@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['play_0',['play',['../class_board.html#a2f7e1ae6949edb313ce2ebbfd8efe188',1,'Board::play()'],['../class_computer.html#a8eb6abb2126a062dc5eccc681a7ae1d4',1,'Computer::play()'],['../class_player.html#a8f30d59bf8cbd6d87d82e6c8e8517550',1,'Player::play()']]],
-  ['playable_5fcolumns_1',['playable_columns',['../class_board.html#ab7fdaef82f7a886dc682d02144395d93',1,'Board']]],
-  ['player_2',['Player',['../class_player.html',1,'Player'],['../class_player.html#af2d57309c860c1784e0d8c8da916919b',1,'Player::Player()']]]
+  ['last_5fmove_0',['last_move',['../class_board_state.html#a29ed218d6fe9373a936488cd8ec2d3d4',1,'BoardState::last_move()'],['../class_player.html#a49ca4fd5009bb05c0be3e9cdf3ba3238',1,'Player::last_move()']]],
+  ['last_5fplayed_5fcolumn_1',['last_played_column',['../class_board.html#a00928400c11a7dbdf9df6db29461e6ba',1,'Board']]],
+  ['loop_2',['loop',['../class_game.html#a7ad92b77b596d7882a7ae76eb18b5e6c',1,'Game']]]
 ];

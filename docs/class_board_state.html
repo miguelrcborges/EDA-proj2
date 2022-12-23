@@ -71,6 +71,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_board_state-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">BoardState Class Reference</div></div>
 </div><!--header-->
@@ -80,7 +82,7 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a53a8104d59c2935fbb60c475e0860fe3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board_state.html#a53a8104d59c2935fbb60c475e0860fe3">BoardState</a> (<a class="el" href="class_board.html">Board</a> &amp;game_board, int depth, char symbol_to_play)</td></tr>
+<tr class="memitem:a53a8104d59c2935fbb60c475e0860fe3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board_state.html#a53a8104d59c2935fbb60c475e0860fe3">BoardState</a> (<a class="el" href="class_board.html">Board</a> &amp;game_board, int <a class="el" href="class_board_state.html#ac015a29ed516402e8e243f9469265080">depth</a>, char <a class="el" href="class_board_state.html#a916fffd662f6aaff1ddf70824aa81eca">symbol_to_play</a>)</td></tr>
 <tr class="separator:a53a8104d59c2935fbb60c475e0860fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a515669e3fe5ff43321e1600f40d71400"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board_state.html#a515669e3fe5ff43321e1600f40d71400">BoardState</a> (<a class="el" href="class_board.html">Board</a> &amp;game_board, int parents_depth, char symbol_playing, int column, int &amp;row)</td></tr>
 <tr class="separator:a515669e3fe5ff43321e1600f40d71400"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -90,6 +92,30 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6344e559fb7832bc40f0b16155b1872f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a49b86bd30cb651cf91e065356a8e2d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board_state.html#a0a49b86bd30cb651cf91e065356a8e2d">get_best_moves</a> (char player_symbol) const</td></tr>
 <tr class="separator:a0a49b86bd30cb651cf91e065356a8e2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ad4df26e2299431e9ca8144a40b044670"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board_state.html#ad4df26e2299431e9ca8144a40b044670">evaluate</a> (char player_symbol)</td></tr>
+<tr class="separator:ad4df26e2299431e9ca8144a40b044670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d916a00439209ece231559d0d6f2084"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board_state.html#a1d916a00439209ece231559d0d6f2084">increment_depth</a> ()</td></tr>
+<tr class="separator:a1d916a00439209ece231559d0d6f2084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17d50a5cb54439abc4769c8172332076"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board_state.html#a17d50a5cb54439abc4769c8172332076">generate_missing_states</a> ()</td></tr>
+<tr class="separator:a17d50a5cb54439abc4769c8172332076"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5409e83799484739cc9195e4e6975501"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_board.html">Board</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board_state.html#a5409e83799484739cc9195e4e6975501">board</a></td></tr>
+<tr class="separator:a5409e83799484739cc9195e4e6975501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeca67e6464a6fcadccc0bf410de9ad7b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board_state.html#aeca67e6464a6fcadccc0bf410de9ad7b">value</a></td></tr>
+<tr class="separator:aeca67e6464a6fcadccc0bf410de9ad7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac015a29ed516402e8e243f9469265080"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board_state.html#ac015a29ed516402e8e243f9469265080">depth</a></td></tr>
+<tr class="separator:ac015a29ed516402e8e243f9469265080"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29ed218d6fe9373a936488cd8ec2d3d4"><td class="memItemLeft" align="right" valign="top">std::array&lt; int, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board_state.html#a29ed218d6fe9373a936488cd8ec2d3d4">last_move</a></td></tr>
+<tr class="separator:a29ed218d6fe9373a936488cd8ec2d3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85d7f3c67e0ee38ad976cef2a3bc3eec"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_board_state.html">BoardState</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board_state.html#a85d7f3c67e0ee38ad976cef2a3bc3eec">child_states</a></td></tr>
+<tr class="separator:a85d7f3c67e0ee38ad976cef2a3bc3eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a916fffd662f6aaff1ddf70824aa81eca"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board_state.html#a916fffd662f6aaff1ddf70824aa81eca">symbol_to_play</a></td></tr>
+<tr class="separator:a916fffd662f6aaff1ddf70824aa81eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Our <a class="el" href="class_board_state.html">BoardState</a> class. This class is used by the <a class="el" href="class_computer.html">Computer</a> class to find the best move.</p>
@@ -214,6 +240,65 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad4df26e2299431e9ca8144a40b044670" name="ad4df26e2299431e9ca8144a40b044670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4df26e2299431e9ca8144a40b044670">&#9670;&#160;</a></span>evaluate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BoardState::evaluate </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>player_symbol</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >An helper method for get_best_moves which evaluates a single state, which can call an evaluation on its child states to so it can find its value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player_symbol</td><td>Symbol of the player using this AI. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a17d50a5cb54439abc4769c8172332076" name="a17d50a5cb54439abc4769c8172332076"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17d50a5cb54439abc4769c8172332076">&#9670;&#160;</a></span>generate_missing_states()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BoardState::generate_missing_states </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >An helper method to update_state which will generate the missing state after moving the state to the right child. </p>
+
+</div>
+</div>
 <a id="a0a49b86bd30cb651cf91e065356a8e2d" name="a0a49b86bd30cb651cf91e065356a8e2d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a49b86bd30cb651cf91e065356a8e2d">&#9670;&#160;</a></span>get_best_moves()</h2>
 
@@ -237,6 +322,32 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The index of the columns corresponding to the best moves. </dd></dl>
+
+</div>
+</div>
+<a id="a1d916a00439209ece231559d0d6f2084" name="a1d916a00439209ece231559d0d6f2084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d916a00439209ece231559d0d6f2084">&#9670;&#160;</a></span>increment_depth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BoardState::increment_depth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >An helper method to update_state which increases the depth of every current state by 2, since has passed 2 turns. </p>
 
 </div>
 </div>
@@ -276,9 +387,148 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a5409e83799484739cc9195e4e6975501" name="a5409e83799484739cc9195e4e6975501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5409e83799484739cc9195e4e6975501">&#9670;&#160;</a></span>board</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_board.html">Board</a> BoardState::board</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p ><a class="el" href="class_board.html">Board</a> corresponding to this specific state of the game. </p>
+
+</div>
+</div>
+<a id="a85d7f3c67e0ee38ad976cef2a3bc3eec" name="a85d7f3c67e0ee38ad976cef2a3bc3eec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85d7f3c67e0ee38ad976cef2a3bc3eec">&#9670;&#160;</a></span>child_states</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_board_state.html">BoardState</a> *&gt; BoardState::child_states</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Vector holding the possible derivated states from this one. </p>
+
+</div>
+</div>
+<a id="ac015a29ed516402e8e243f9469265080" name="ac015a29ed516402e8e243f9469265080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac015a29ed516402e8e243f9469265080">&#9670;&#160;</a></span>depth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BoardState::depth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Represents how much more orders of child states there could be. </p>
+
+</div>
+</div>
+<a id="a29ed218d6fe9373a936488cd8ec2d3d4" name="a29ed218d6fe9373a936488cd8ec2d3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29ed218d6fe9373a936488cd8ec2d3d4">&#9670;&#160;</a></span>last_move</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;int, 2&gt; BoardState::last_move</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Last simulated move so it can be passed to the <a class="el" href="class_board.html">Board</a>'s check_win method. </p>
+
+</div>
+</div>
+<a id="a916fffd662f6aaff1ddf70824aa81eca" name="a916fffd662f6aaff1ddf70824aa81eca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a916fffd662f6aaff1ddf70824aa81eca">&#9670;&#160;</a></span>symbol_to_play</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char BoardState::symbol_to_play</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Symbol that is going to play in the moves that are being simulated. </p>
+
+</div>
+</div>
+<a id="aeca67e6464a6fcadccc0bf410de9ad7b" name="aeca67e6464a6fcadccc0bf410de9ad7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeca67e6464a6fcadccc0bf410de9ad7b">&#9670;&#160;</a></span>value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BoardState::value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Score corresponding to this state in the perspective of the computer who generated this states. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="board_state_8h_source.html">boardState.h</a></li>
-<li>src/boardState.cpp</li>
+<li>src/<a class="el" href="board_state_8cpp.html">boardState.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -76,17 +76,17 @@ $(function() {
   <div class="headertitle"><div class="title">game.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="game_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;array&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;ctime&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;board.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;player.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;constants.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;inputHandler.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="board_8h.html">board.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="player_8h.html">player.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="constants_8h.html">constants.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="input_handler_8h.html">inputHandler.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
@@ -99,23 +99,32 @@ $(function() {
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#a7ad92b77b596d7882a7ae76eb18b5e6c">loop</a>(); </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_class" href="class_input_handler.html">InputHandler</a> input;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_game.html#a26bac9b095c66a26901328c0c02f2299">   41</a></span>    <a class="code hl_class" href="class_input_handler.html">InputHandler</a> <a class="code hl_variable" href="class_game.html#a26bac9b095c66a26901328c0c02f2299">input</a>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    tm* times;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_game.html#af03258c09317ebbe2f854fd77c2693bf">   46</a></span>    tm* <a class="code hl_variable" href="class_game.html#af03258c09317ebbe2f854fd77c2693bf">times</a>;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    std::array&lt;Player* ,NUMBER_OF_PLAYERS&gt; players;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_game.html#a35f06183ef8bba1e3149a1edf7647e42">   51</a></span>    std::array&lt;Player* ,NUMBER_OF_PLAYERS&gt; <a class="code hl_variable" href="class_game.html#a35f06183ef8bba1e3149a1edf7647e42">players</a>;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">int</span> turn;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_game.html#aef6ba37517324fc3469dfa65d6f92d21">   56</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_game.html#aef6ba37517324fc3469dfa65d6f92d21">turn</a>;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_class" href="class_board.html">Board</a>* board_ptr;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_game.html#a633168eef5dad11553e3703a00e46808">   61</a></span>    <a class="code hl_class" href="class_board.html">Board</a>* <a class="code hl_variable" href="class_game.html#a633168eef5dad11553e3703a00e46808">board_ptr</a>;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="ttc" id="aboard_8h_html"><div class="ttname"><a href="board_8h.html">board.h</a></div></div>
 <div class="ttc" id="aclass_board_html"><div class="ttname"><a href="class_board.html">Board</a></div><div class="ttdef"><b>Definition:</b> board.h:25</div></div>
 <div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdef"><b>Definition:</b> game.h:20</div></div>
+<div class="ttc" id="aclass_game_html_a26bac9b095c66a26901328c0c02f2299"><div class="ttname"><a href="class_game.html#a26bac9b095c66a26901328c0c02f2299">Game::input</a></div><div class="ttdeci">InputHandler input</div><div class="ttdef"><b>Definition:</b> game.h:41</div></div>
+<div class="ttc" id="aclass_game_html_a35f06183ef8bba1e3149a1edf7647e42"><div class="ttname"><a href="class_game.html#a35f06183ef8bba1e3149a1edf7647e42">Game::players</a></div><div class="ttdeci">std::array&lt; Player *,NUMBER_OF_PLAYERS &gt; players</div><div class="ttdef"><b>Definition:</b> game.h:51</div></div>
+<div class="ttc" id="aclass_game_html_a633168eef5dad11553e3703a00e46808"><div class="ttname"><a href="class_game.html#a633168eef5dad11553e3703a00e46808">Game::board_ptr</a></div><div class="ttdeci">Board * board_ptr</div><div class="ttdef"><b>Definition:</b> game.h:61</div></div>
 <div class="ttc" id="aclass_game_html_a7ad92b77b596d7882a7ae76eb18b5e6c"><div class="ttname"><a href="class_game.html#a7ad92b77b596d7882a7ae76eb18b5e6c">Game::loop</a></div><div class="ttdeci">void loop()</div><div class="ttdef"><b>Definition:</b> game.cpp:125</div></div>
 <div class="ttc" id="aclass_game_html_ad59df6562a58a614fda24622d3715b65"><div class="ttname"><a href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game::Game</a></div><div class="ttdeci">Game()</div><div class="ttdef"><b>Definition:</b> game.cpp:14</div></div>
 <div class="ttc" id="aclass_game_html_ae3d112ca6e0e55150d2fdbc704474530"><div class="ttname"><a href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">Game::~Game</a></div><div class="ttdeci">~Game()</div><div class="ttdef"><b>Definition:</b> game.cpp:69</div></div>
+<div class="ttc" id="aclass_game_html_aef6ba37517324fc3469dfa65d6f92d21"><div class="ttname"><a href="class_game.html#aef6ba37517324fc3469dfa65d6f92d21">Game::turn</a></div><div class="ttdeci">int turn</div><div class="ttdef"><b>Definition:</b> game.h:56</div></div>
+<div class="ttc" id="aclass_game_html_af03258c09317ebbe2f854fd77c2693bf"><div class="ttname"><a href="class_game.html#af03258c09317ebbe2f854fd77c2693bf">Game::times</a></div><div class="ttdeci">tm * times</div><div class="ttdef"><b>Definition:</b> game.h:46</div></div>
 <div class="ttc" id="aclass_input_handler_html"><div class="ttname"><a href="class_input_handler.html">InputHandler</a></div><div class="ttdef"><b>Definition:</b> inputHandler.h:12</div></div>
+<div class="ttc" id="aconstants_8h_html"><div class="ttname"><a href="constants_8h.html">constants.h</a></div></div>
+<div class="ttc" id="ainput_handler_8h_html"><div class="ttname"><a href="input_handler_8h.html">inputHandler.h</a></div></div>
+<div class="ttc" id="aplayer_8h_html"><div class="ttname"><a href="player_8h.html">player.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

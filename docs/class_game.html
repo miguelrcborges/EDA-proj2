@@ -71,6 +71,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_game-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Game Class Reference</div></div>
 </div><!--header-->
@@ -86,6 +87,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae3d112ca6e0e55150d2fdbc704474530"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ad92b77b596d7882a7ae76eb18b5e6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a7ad92b77b596d7882a7ae76eb18b5e6c">loop</a> ()</td></tr>
 <tr class="separator:a7ad92b77b596d7882a7ae76eb18b5e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a26bac9b095c66a26901328c0c02f2299"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_input_handler.html">InputHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a26bac9b095c66a26901328c0c02f2299">input</a></td></tr>
+<tr class="separator:a26bac9b095c66a26901328c0c02f2299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af03258c09317ebbe2f854fd77c2693bf"><td class="memItemLeft" align="right" valign="top">tm *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#af03258c09317ebbe2f854fd77c2693bf">times</a></td></tr>
+<tr class="separator:af03258c09317ebbe2f854fd77c2693bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35f06183ef8bba1e3149a1edf7647e42"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="class_player.html">Player</a> *,<a class="el" href="constants_8h.html#a26b673bcfbead68dcbf4872df6970456">NUMBER_OF_PLAYERS</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a35f06183ef8bba1e3149a1edf7647e42">players</a></td></tr>
+<tr class="separator:a35f06183ef8bba1e3149a1edf7647e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef6ba37517324fc3469dfa65d6f92d21"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aef6ba37517324fc3469dfa65d6f92d21">turn</a></td></tr>
+<tr class="separator:aef6ba37517324fc3469dfa65d6f92d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a633168eef5dad11553e3703a00e46808"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_board.html">Board</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a633168eef5dad11553e3703a00e46808">board_ptr</a></td></tr>
+<tr class="separator:a633168eef5dad11553e3703a00e46808"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Our <a class="el" href="class_game.html">Game</a> class. This class initializes each match that is played, containing information related to the board, to the players and the time of play. It also registers in "match log" file the results after match end. </p>
@@ -146,9 +160,125 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a633168eef5dad11553e3703a00e46808" name="a633168eef5dad11553e3703a00e46808"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a633168eef5dad11553e3703a00e46808">&#9670;&#160;</a></span>board_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_board.html">Board</a>* Game::board_ptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Pointer to a <a class="el" href="class_board.html">Board</a> class element. </p>
+
+</div>
+</div>
+<a id="a26bac9b095c66a26901328c0c02f2299" name="a26bac9b095c66a26901328c0c02f2299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26bac9b095c66a26901328c0c02f2299">&#9670;&#160;</a></span>input</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_input_handler.html">InputHandler</a> Game::input</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Element that allows the usage of the modes in <a class="el" href="class_input_handler.html">InputHandler</a> class. Essential for reading inputs from the user/player. </p>
+
+</div>
+</div>
+<a id="a35f06183ef8bba1e3149a1edf7647e42" name="a35f06183ef8bba1e3149a1edf7647e42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35f06183ef8bba1e3149a1edf7647e42">&#9670;&#160;</a></span>players</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;<a class="el" href="class_player.html">Player</a>* ,<a class="el" href="constants_8h.html#a26b673bcfbead68dcbf4872df6970456">NUMBER_OF_PLAYERS</a>&gt; Game::players</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Element that constitues an array of pointers to <a class="el" href="class_player.html">Player</a> class elements. </p>
+
+</div>
+</div>
+<a id="af03258c09317ebbe2f854fd77c2693bf" name="af03258c09317ebbe2f854fd77c2693bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af03258c09317ebbe2f854fd77c2693bf">&#9670;&#160;</a></span>times</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tm* Game::times</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Element that employs the use of the tm structure for time handling. </p>
+
+</div>
+</div>
+<a id="aef6ba37517324fc3469dfa65d6f92d21" name="aef6ba37517324fc3469dfa65d6f92d21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef6ba37517324fc3469dfa65d6f92d21">&#9670;&#160;</a></span>turn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Game::turn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Integer that registers the turn of game. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="game_8h_source.html">game.h</a></li>
-<li>src/game.cpp</li>
+<li>src/<a class="el" href="game_8cpp.html">game.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

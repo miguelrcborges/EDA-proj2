@@ -69,27 +69,37 @@ $(function() {
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
+<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_b" name="index_b"></a>- b -</h3><ul>
 <li>Board()&#160;:&#160;<a class="el" href="class_board.html#a66147641b1b73f7f253857cef34c0a08">Board</a></li>
+<li>board&#160;:&#160;<a class="el" href="class_board_state.html#a5409e83799484739cc9195e4e6975501">BoardState</a></li>
+<li>board_ptr&#160;:&#160;<a class="el" href="class_game.html#a633168eef5dad11553e3703a00e46808">Game</a></li>
 <li>BoardState()&#160;:&#160;<a class="el" href="class_board_state.html#a53a8104d59c2935fbb60c475e0860fe3">BoardState</a></li>
 </ul>
 
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>check_win()&#160;:&#160;<a class="el" href="class_board.html#a803bb92f265e06ac017aabda4816672c">Board</a></li>
+<li>child_states&#160;:&#160;<a class="el" href="class_board_state.html#a85d7f3c67e0ee38ad976cef2a3bc3eec">BoardState</a></li>
 <li>Computer()&#160;:&#160;<a class="el" href="class_computer.html#aa00de3fb53d9d505ba8a5abfabff2bb2">Computer</a></li>
 </ul>
 
 
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
+<li>depth&#160;:&#160;<a class="el" href="class_board_state.html#ac015a29ed516402e8e243f9469265080">BoardState</a>, <a class="el" href="class_computer.html#ab3046cf07b2f42de721d2845f0ddfe9a">Computer</a></li>
 <li>draw_board()&#160;:&#160;<a class="el" href="class_board.html#acfa9570fd4a17bd91ddef38166d28c3d">Board</a></li>
+</ul>
+
+
+<h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
+<li>evaluate()&#160;:&#160;<a class="el" href="class_board_state.html#ad4df26e2299431e9ca8144a40b044670">BoardState</a></li>
 </ul>
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
 <li>Game()&#160;:&#160;<a class="el" href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game</a></li>
+<li>generate_missing_states()&#160;:&#160;<a class="el" href="class_board_state.html#a17d50a5cb54439abc4769c8172332076">BoardState</a></li>
 <li>get_best_moves()&#160;:&#160;<a class="el" href="class_board_state.html#a0a49b86bd30cb651cf91e065356a8e2d">BoardState</a></li>
 <li>get_depth()&#160;:&#160;<a class="el" href="class_computer.html#a34225f1a2512673f346992849edcca8e">Computer</a></li>
 <li>get_height()&#160;:&#160;<a class="el" href="class_board.html#a81c28f20f9e28a0c361db353e83c36e7">Board</a></li>
@@ -104,13 +114,15 @@ $(function() {
 
 
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
-<li>input&#160;:&#160;<a class="el" href="class_player.html#aba18e39cad19145fda8fcf5edb6bb963">Player</a></li>
+<li>increment_depth()&#160;:&#160;<a class="el" href="class_board_state.html#a1d916a00439209ece231559d0d6f2084">BoardState</a></li>
+<li>input&#160;:&#160;<a class="el" href="class_game.html#a26bac9b095c66a26901328c0c02f2299">Game</a>, <a class="el" href="class_player.html#aba18e39cad19145fda8fcf5edb6bb963">Player</a></li>
 <li>is_playable()&#160;:&#160;<a class="el" href="class_board.html#a6abe2cf2bc00b8317085a74d20760ba8">Board</a></li>
 </ul>
 
 
 <h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
-<li>last_move&#160;:&#160;<a class="el" href="class_player.html#a49ca4fd5009bb05c0be3e9cdf3ba3238">Player</a></li>
+<li>last_move&#160;:&#160;<a class="el" href="class_board_state.html#a29ed218d6fe9373a936488cd8ec2d3d4">BoardState</a>, <a class="el" href="class_player.html#a49ca4fd5009bb05c0be3e9cdf3ba3238">Player</a></li>
+<li>last_played_column&#160;:&#160;<a class="el" href="class_board.html#a00928400c11a7dbdf9df6db29461e6ba">Board</a></li>
 <li>loop()&#160;:&#160;<a class="el" href="class_game.html#a7ad92b77b596d7882a7ae76eb18b5e6c">Game</a></li>
 </ul>
 
@@ -124,16 +136,34 @@ $(function() {
 <li>play()&#160;:&#160;<a class="el" href="class_board.html#a2f7e1ae6949edb313ce2ebbfd8efe188">Board</a>, <a class="el" href="class_computer.html#a8eb6abb2126a062dc5eccc681a7ae1d4">Computer</a>, <a class="el" href="class_player.html#a8f30d59bf8cbd6d87d82e6c8e8517550">Player</a></li>
 <li>playable_columns()&#160;:&#160;<a class="el" href="class_board.html#ab7fdaef82f7a886dc682d02144395d93">Board</a></li>
 <li>Player()&#160;:&#160;<a class="el" href="class_player.html#af2d57309c860c1784e0d8c8da916919b">Player</a></li>
+<li>players&#160;:&#160;<a class="el" href="class_game.html#a35f06183ef8bba1e3149a1edf7647e42">Game</a></li>
+<li>print_header()&#160;:&#160;<a class="el" href="class_board.html#a8f8de06513c605c6cbbe50f41c75cbf5">Board</a></li>
 </ul>
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>slots&#160;:&#160;<a class="el" href="class_board.html#a7e5179fa38a9ede8027d2bc8164e7b3c">Board</a></li>
+<li>state&#160;:&#160;<a class="el" href="class_computer.html#a2df7ee2003a93d170f12f7971f58379c">Computer</a></li>
 <li>symbol&#160;:&#160;<a class="el" href="class_player.html#aea1365be6d1080944beab1868b802720">Player</a></li>
+<li>symbol_to_play&#160;:&#160;<a class="el" href="class_board_state.html#a916fffd662f6aaff1ddf70824aa81eca">BoardState</a></li>
+<li>symbols&#160;:&#160;<a class="el" href="class_board.html#ad044b8ed8cbd3b36710e1cc467feebd1">Board</a></li>
+</ul>
+
+
+<h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>times&#160;:&#160;<a class="el" href="class_game.html#af03258c09317ebbe2f854fd77c2693bf">Game</a></li>
+<li>to_connect&#160;:&#160;<a class="el" href="class_board.html#a8a8c88d0d1d2b5dbd886d3f0712ca629">Board</a></li>
+<li>turn&#160;:&#160;<a class="el" href="class_game.html#aef6ba37517324fc3469dfa65d6f92d21">Game</a></li>
 </ul>
 
 
 <h3><a id="index_u" name="index_u"></a>- u -</h3><ul>
 <li>update_state()&#160;:&#160;<a class="el" href="class_board_state.html#a6344e559fb7832bc40f0b16155b1872f">BoardState</a></li>
+</ul>
+
+
+<h3><a id="index_v" name="index_v"></a>- v -</h3><ul>
+<li>value&#160;:&#160;<a class="el" href="class_board_state.html#aeca67e6464a6fcadccc0bf410de9ad7b">BoardState</a></li>
 </ul>
 
 
