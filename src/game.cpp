@@ -61,7 +61,7 @@ Game::Game()
 	turn = FIRST_TURN;
 	board_ptr = new Board(width, height, to_connect, player_symbols[0], player_symbols[1]); 
 
-	//initializing times with the time at start of game
+	// Initializing times with the time at start of game.
 	time_t current_time = time(NULL);
 	times = localtime(&current_time);
 }
@@ -73,10 +73,10 @@ Game::~Game()
 	out.open("match logs.txt", std::ios_base::app);
 	out << std::setfill('0');
 
-	out << times->tm_year + 1900 << " - " << times->tm_mon + 1 << " - " << times->tm_mday << " / "  //tm_year needs to be converted by adding 1900 and tm_mon by adding 1
+	out << times->tm_year + 1900 << " - " << times->tm_mon + 1 << " - " << times->tm_mday << " / "  // tm_year needs to be converted by adding 1900 and tm_mon by adding 1.
 		<< times->tm_hour << ":" << std::setw(2) << times->tm_min << " - 1) " << (players[0])->get_name();
 
-	Computer* tmp_p = dynamic_cast<Computer*>(players[0]); // Trying to cast players[0] as a pointer to Computer. If it's not a computer, tmp_p = NULL
+	Computer* tmp_p = dynamic_cast<Computer*>(players[0]); // Trying to cast players[0] as a pointer to Computer. If it's not a computer, tmp_p = NULL.
 
 	if (tmp_p != NULL)
 	{
@@ -115,7 +115,7 @@ Game::~Game()
 	out << ".\n";
 	out.close();
 
-	//releasing memory taken up by players
+	// Releasing memory taken up by players.
 	for (int i = 0; i < NUMBER_OF_PLAYERS; i++)
 	{
 		delete players[i];
