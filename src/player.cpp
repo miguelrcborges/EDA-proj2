@@ -14,7 +14,7 @@ Player::Player(char symbol_to_set) : symbol(symbol_to_set), name(input.get_strin
 }
 
 void Player::play(Board &board) {
-  // Loops until gets a valid loop/
+  // Loops until gets a valid loop.
   while (true) {
     char column_to_play_input = input.get_input<char>("On which column do you want to play in, " + name + "?");
     column_to_play_input = toupper(column_to_play_input);
@@ -32,7 +32,7 @@ void Player::play(Board &board) {
       continue;
     }
     
-    // Plays
+    // Plays.
     last_move[1] = board.play(column_to_play_index, symbol);
     last_move[0] = column_to_play_index;
     return;
