@@ -5,6 +5,12 @@
 #include "board.h"
 #include "inputHandler.h"
 
+/**
+* Our Player class. This class represents each person playing the game.
+* 
+* It holds the player information as well needed methods required by the player
+* to interact with the game.
+*/
 class Player {
 public:
   /**

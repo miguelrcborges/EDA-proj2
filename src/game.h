@@ -23,31 +23,38 @@ public:
 	* Initialization of the Game class.  
 	*/
 	Game(); 
+
 	/** 
 	* End of match; logs the results, desctructor of Game class. 
 	*/
 	~Game();
+
 	/** 
 	* Loop of game. 
 	*/
 	void loop(); 
+
 private:
 	/** 
 	* Element that allows the usage of the modes in InputHandler class. Essential for reading inputs from the user/player. 
 	*/
 	InputHandler input;
+
 	/** 
 	* Element that employs the use of the tm structure for time handling. 
 	*/
 	tm* times;
+
 	/** 
 	* Element that constitues an array of pointers to Player class elements. 
 	*/
 	std::array<Player* ,NUMBER_OF_PLAYERS> players;
+
 	/** 
 	* Integer that registers the turn of game. 
 	*/
 	int turn;
+
 	/** 
 	* Pointer to a Board class element. 
 	*/

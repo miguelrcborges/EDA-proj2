@@ -18,6 +18,10 @@
 /** ANSI escape code to clear applied styles. */
 #define CLEAR_STYLE  "\033[m"
 
+/**
+* Our Board class. This class holds the symbol at every place and has useful methods
+* that could be used by the Player and Computer classes.
+*/
 class Board {
 public:
   /**
