@@ -74,8 +74,12 @@ private:
   /**
   * An helper method to update_state which will generate the missing state after moving the state to the
   * right child.
+  * 
+  * This parameter is needed because, when updating the state, the parent may have intrisict value, which
+  * would stop the generation of the other paths besides the victory one, which would make the AI think
+  * that it would win regardless of the path.
   */
-  void generate_missing_states();
+  void generate_missing_states(bool is_child);
 
   /**
   * Board corresponding to this specific state of the game.

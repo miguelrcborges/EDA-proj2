@@ -151,7 +151,7 @@ BoardState *BoardState::update_state(int computer_move, int opponent_move) {
 outside:
   // In case a state has found
   return_p->increment_depth();
-  return_p->generate_missing_states();
+  return_p->generate_missing_states(false);
 end:
   delete this;
   return return_p;
@@ -166,9 +166,9 @@ void BoardState::increment_depth() {
 }
 
 
-void BoardState::generate_missing_states() {
+void BoardState::generate_missing_states(bool is_child) {
   // Win was found, no reason to generate child states.
-  if (value != 0) return;
+  if (value != 0 && is_child) return;
   
   // Stop condition was met, do not generate child states.
   if (depth <= 0) return;
@@ -189,7 +189,7 @@ void BoardState::generate_missing_states() {
   // Otherwise checks if it's child states are missing child states.
   else {
     for (int i = 0; i < child_states.size(); i++) {
-      child_states[i]->generate_missing_states();
+      child_states[i]->generate_missing_states(true);
     }
   }
 }
