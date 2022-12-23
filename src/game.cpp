@@ -15,6 +15,7 @@ Game::Game()
 {
 	int height, width, to_connect;
 	std::array<char, NUMBER_OF_PLAYERS> player_symbols;
+
 	for (int i = 0; i < NUMBER_OF_PLAYERS; i++)
 	{
 		player_symbols[i] = input.get_input<char>("Choose the player's symbol");
@@ -60,6 +61,7 @@ Game::Game()
 	turn = FIRST_TURN;
 	board_ptr = new Board(width, height, to_connect, player_symbols[0], player_symbols[1]); 
 
+	//initializing times with the time at start of game
 	time_t current_time = time(NULL);
 	times = localtime(&current_time);
 }
@@ -74,7 +76,7 @@ Game::~Game()
 	out << times->tm_year + 1900 << " - " << times->tm_mon + 1 << " - " << times->tm_mday << " / "  //tm_year needs to be converted by adding 1900 and tm_mon by adding 1
 		<< times->tm_hour << ":" << std::setw(2) << times->tm_min << " - 1) " << (players[0])->get_name();
 
-	Computer* tmp_p = dynamic_cast<Computer*>(players[0]); // tentativa de dar cast a players[0] como um pointer para Computer. Caso não seja computador, tmp_p = NULL
+	Computer* tmp_p = dynamic_cast<Computer*>(players[0]); // Trying to cast players[0] as a pointer to Computer. If it's not a computer, tmp_p = NULL
 
 	if (tmp_p != NULL)
 	{
@@ -113,6 +115,7 @@ Game::~Game()
 	out << ".\n";
 	out.close();
 
+	//releasing memory taken up by players
 	for (int i = 0; i < NUMBER_OF_PLAYERS; i++)
 	{
 		delete players[i];
