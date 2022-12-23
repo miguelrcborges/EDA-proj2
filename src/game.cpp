@@ -15,6 +15,7 @@ Game::Game()
 {
 	int height, width, to_connect;
 	std::array<char, NUMBER_OF_PLAYERS> player_symbols;
+
 	for (int i = 0; i < NUMBER_OF_PLAYERS; i++)
 	{
 		player_symbols[i] = input.get_input<char>("Choose the player's symbol");
@@ -60,6 +61,7 @@ Game::Game()
 	turn = FIRST_TURN;
 	board_ptr = new Board(width, height, to_connect, player_symbols[0], player_symbols[1]); 
 
+	//initializing times with the time at start of game
 	time_t current_time = time(NULL);
 	times = localtime(&current_time);
 }
@@ -113,6 +115,7 @@ Game::~Game()
 	out << ".\n";
 	out.close();
 
+	//releasing memory taken up by players
 	for (int i = 0; i < NUMBER_OF_PLAYERS; i++)
 	{
 		delete players[i];
