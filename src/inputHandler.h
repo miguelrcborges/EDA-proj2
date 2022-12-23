@@ -40,6 +40,13 @@ public:
             return input;
         }
 
+        if (!std::cin.eof()) {
+            std::cout << "Please, send a valid value." << std::endl;
+            std::cin.clear();
+            std::cin.ignore(100000, '\n');
+            goto ask_input;
+        }
+
         // If the user types EOF.
         do {
             std::cout << "\nDo you really want to quit? (Y/N)\n> ";
