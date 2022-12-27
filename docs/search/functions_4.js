@@ -1,7 +1,7 @@
 var searchData=
 [
   ['game_0',['Game',['../class_game.html#ad59df6562a58a614fda24622d3715b65',1,'Game']]],
-  ['generate_5fmissing_5fstates_1',['generate_missing_states',['../class_board_state.html#a17d50a5cb54439abc4769c8172332076',1,'BoardState']]],
+  ['generate_5fmissing_5fstates_1',['generate_missing_states',['../class_board_state.html#ac5d8fabe2eb32c0243f9e32dc2108655',1,'BoardState']]],
   ['get_5fbest_5fmoves_2',['get_best_moves',['../class_board_state.html#a0a49b86bd30cb651cf91e065356a8e2d',1,'BoardState']]],
   ['get_5fdepth_3',['get_depth',['../class_computer.html#a34225f1a2512673f346992849edcca8e',1,'Computer']]],
   ['get_5fheight_4',['get_height',['../class_board.html#a81c28f20f9e28a0c361db353e83c36e7',1,'Board']]],

@@ -99,8 +99,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:ad4df26e2299431e9ca8144a40b044670"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d916a00439209ece231559d0d6f2084"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board_state.html#a1d916a00439209ece231559d0d6f2084">increment_depth</a> ()</td></tr>
 <tr class="separator:a1d916a00439209ece231559d0d6f2084"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17d50a5cb54439abc4769c8172332076"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board_state.html#a17d50a5cb54439abc4769c8172332076">generate_missing_states</a> ()</td></tr>
-<tr class="separator:a17d50a5cb54439abc4769c8172332076"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5d8fabe2eb32c0243f9e32dc2108655"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board_state.html#ac5d8fabe2eb32c0243f9e32dc2108655">generate_missing_states</a> (bool is_child)</td></tr>
+<tr class="separator:ac5d8fabe2eb32c0243f9e32dc2108655"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -273,8 +273,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a17d50a5cb54439abc4769c8172332076" name="a17d50a5cb54439abc4769c8172332076"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17d50a5cb54439abc4769c8172332076">&#9670;&#160;</a></span>generate_missing_states()</h2>
+<a id="ac5d8fabe2eb32c0243f9e32dc2108655" name="ac5d8fabe2eb32c0243f9e32dc2108655"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5d8fabe2eb32c0243f9e32dc2108655">&#9670;&#160;</a></span>generate_missing_states()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -285,7 +285,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void BoardState::generate_missing_states </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_child</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -295,7 +296,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >An helper method to update_state which will generate the missing state after moving the state to the right child. </p>
+<p >An helper method to update_state which will generate the missing state after moving the state to the right child.</p>
+<p >This parameter is needed because, when updating the state, the parent may have intrisict value, which would stop the generation of the other paths besides the victory one, which would make the AI think that it would win regardless of the path. </p>
 
 </div>
 </div>
